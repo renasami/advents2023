@@ -11,3 +11,16 @@ services:
       - ./sample_server/app:/code/app
     ports:
       - 8080:8080
+
+  node:
+    container_name: "nodejs"
+
+    build:
+      context: ./js
+      dockerfile: Dockerfile
+    
+    volumes:
+      - ./js/app:/usr/src
+
+    ports:
+      - 3000:3000
