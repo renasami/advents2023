@@ -1,0 +1,13 @@
+version: "3.0"
+
+services:
+  sample_server:
+    container_name: "sample_server"
+
+    build:
+      context: ./sample_server
+      dockerfile: Dockerfile
+    volumes:
+      - ./sample_server/app:/code/app
+    ports:
+      - 8080:8080
